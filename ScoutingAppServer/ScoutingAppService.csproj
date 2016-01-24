@@ -222,17 +222,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Start\" />
     <Folder Include="StorageDataObjects\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\Startup.MobileApp.cs" />
+    <Compile Include="ClientData\Startup.MobileApp.cs" />
     <Compile Include="ClientData\ClientAccount.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Interfaces\RegistrationRequest.cs" />
     <Compile Include="Models\CustomLoginProviderUtils.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="SQLDataObjects\Account.cs" />
+    <Compile Include="SQLDataObjects\Alliance.cs" />
+    <Compile Include="SQLDataObjects\Event.cs" />
+    <Compile Include="SQLDataObjects\Match.cs" />
+    <Compile Include="SQLDataObjects\Performance.cs" />
     <Compile Include="SQLDataObjects\Role.cs" />
+    <Compile Include="SQLDataObjects\Team.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
