@@ -190,3 +190,6 @@ C:\Robotics\ScoutingAppServer\flipyserverService\bin\zh-Hant\System.Spatial.reso
 C:\Robotics\ScoutingAppServer\flipyserverService\obj\Debug\ScoutingAppService.csprojResolveAssemblyReference.cache
 C:\Robotics\ScoutingAppServer\flipyserverService\obj\Debug\flipyserverService.dll
 C:\Robotics\ScoutingAppServer\flipyserverService\obj\Debug\flipyserverService.pdb
+C:\Users\GeoEn\OneDrive\Code\ScoutingAppServer\ScoutingAppServer\obj\Debug\ScoutingAppService.csprojResolveAssemblyReference.cache
+C:\Users\GeoEn\OneDrive\Code\ScoutingAppServer\ScoutingAppServer\obj\Debug\flipyserverService.dll
+C:\Users\GeoEn\OneDrive\Code\ScoutingAppServer\ScoutingAppServer\obj\Debug\flipyserverService.pdb

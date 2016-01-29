@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using flipyserverService.ClientData;
-using Microsoft.Azure.Mobile.Server;
 
-namespace flipyserverService.SQLDataObjects
+namespace flipyserverService.ClientData
 {
-    public class Performance: EntityData
+    public class ClientPerformance
     {
         /// <summary>
         /// Sends ints 0-4 for Autonomous phase to
@@ -21,7 +19,7 @@ namespace flipyserverService.SQLDataObjects
         public int DefensesCrossed { get; set; }
 
         public int HighShotsMade { get; set; }
-        
+
         public int LowShotsMade { get; set; }
 
         public int HightShotsMissed { get; set; }
@@ -39,21 +37,5 @@ namespace flipyserverService.SQLDataObjects
         /// -King George ( ͡° ͜ʖ ͡°) and human slave #55686
         /// </summary>
         public int EndGame { get; set; }
-
-        public ClientPerformance GetClientPerformance()
-        {
-            return new ClientPerformance()
-            {
-                EndGame = EndGame,
-                Auto = Auto,
-                DefensesCrossed =  DefensesCrossed,
-                Fouls = Fouls,
-                HighShotsMade = HighShotsMade,
-                HightShotsMissed = HightShotsMissed,
-                LowShotsMade = LowShotsMade,
-                LowShotsMissed = LowShotsMissed
-            };
-        }
-
     }
 }

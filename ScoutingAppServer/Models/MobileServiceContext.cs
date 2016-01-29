@@ -17,6 +17,11 @@ namespace flipyserverService.Models
         }
 
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Alliance> Alliances { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Match> Matches { get; set; }
+        public DbSet<Performance> Performances { get; set; }
         public DbSet<Role> Roles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

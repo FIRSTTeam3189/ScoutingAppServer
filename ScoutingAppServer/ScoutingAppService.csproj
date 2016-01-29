@@ -226,12 +226,19 @@
     <Folder Include="StorageDataObjects\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientData\ClientPerformance.cs" />
+    <Compile Include="ClientData\ClientTeam.cs" />
     <Compile Include="ClientData\Startup.MobileApp.cs" />
     <Compile Include="ClientData\ClientAccount.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Interfaces\RegistrationRequest.cs" />
+    <Compile Include="Models\BlueAllianceClient.cs" />
+    <Compile Include="Models\BlueAllianceConstants.cs" />
     <Compile Include="Models\CustomLoginProviderUtils.cs" />
+    <Compile Include="Models\JTokenExtensions.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
+    <Compile Include="Models\StreamExtentions.cs" />
     <Compile Include="SQLDataObjects\Account.cs" />
     <Compile Include="SQLDataObjects\Alliance.cs" />
     <Compile Include="SQLDataObjects\Event.cs" />
