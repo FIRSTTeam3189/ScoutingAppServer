@@ -26,7 +26,7 @@ namespace ScoutingModels.Scrubber
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<Event>> GetEvents(int year)
+        public async Task<IList<Event>> GetEvents(int year)
         {
             var reqeustUri = string.Format(
                 Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.EventsList), year);
@@ -34,7 +34,7 @@ namespace ScoutingModels.Scrubber
             // Get the array from the client
             var array = (await client.GetStreamAsync(reqeustUri)).JArrayFromStream();
 
-            return array.Select(x => x.GetEventFromJToken());
+            return array.Select(x => x.GetEventFromJToken()).ToList();
         }
 
         /// <summary>

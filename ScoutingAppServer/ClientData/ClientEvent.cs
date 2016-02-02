@@ -6,9 +6,9 @@ using System.Web;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.WindowsAzure.Storage.Table;
 
-namespace flipyserverService.SQLDataObjects
+namespace flipyserverService.ClientData
 {
-    public class Event:EntityData
+    public class ClientEvent
     {
 
         public string Location { get; set; }
@@ -25,6 +25,5 @@ namespace flipyserverService.SQLDataObjects
 
         public bool Official { get; set; }
 
-        public virtual ICollection<Match> Match { get; set; }
     }
 }

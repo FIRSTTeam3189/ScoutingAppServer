@@ -53,10 +53,9 @@ namespace ScoutingModels.Test
                 Year = obj[EventYear].ToObject<int>(),
                 EventCode = obj[EventCode].ToObject<string>(),
                 Website = obj[EventWebsite].ToObject<string>() ?? "No EventWebsite",
-                Id = Guid.NewGuid().ToString(),
                 StartDate = start,
                 EndDate = end,
-                Name = obj[EventName].ToObject<string>(),
+                Id = obj[EventName].ToObject<string>(),
                 Official = obj[EventOfficial].ToObject<bool>()
             };
 
