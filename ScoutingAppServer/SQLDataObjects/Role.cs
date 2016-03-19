@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace flipyserverService.SQLDataObjects {
+namespace ScoutingServer.SQLDataObjects {
     public class Role : EntityData {
         public const int ROLE_LEVEL_USER = 0;
         public const int ROLE_LEVEL_MOD = 1;

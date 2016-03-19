@@ -5,11 +5,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using flipyserverService.SQLDataObjects;
+using ScoutingServer.SQLDataObjects;
 using Newtonsoft.Json.Linq;
-using ScoutingModels.Test;
+using ScoutingModels.Models;
 
-namespace ScoutingModels.Scrubber
+namespace ScoutingServer.Models
 {
     public class BlueAllianceClient
     {
@@ -30,9 +30,10 @@ namespace ScoutingModels.Scrubber
         {
             var reqeustUri = string.Format(
                 Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.EventsList), year);
-
+            System.Diagnostics.Trace.TraceError(reqeustUri.ToString());
             // Get the array from the client
-            var array = (await client.GetStreamAsync(reqeustUri)).JArrayFromStream();
+            var stream = await client.GetStreamAsync(reqeustUri);
+            var array = (stream).JArrayFromStream();
 
             return array.Select(x => x.GetEventFromJToken()).ToList();
         }
@@ -60,7 +61,7 @@ namespace ScoutingModels.Scrubber
         public async Task<Team> GetTeam(int teamnumber)
         {
             var requestUri = string.Format(
-                Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.Teams), teamnumber);
+                Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.Team), teamnumber);
 
             var array = (await client.GetStreamAsync(requestUri)).JTokenFromStream();
 
@@ -73,25 +74,25 @@ namespace ScoutingModels.Scrubber
         /// <param name="year"></param>
         /// <param name="eventCode"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<Team>> GetEventTeams(int year, int eventCode)
+        public async Task<IList<Team>> GetEventTeams(int year, string eventCode)
         {
             var requestUri = string.Format(
                 Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.EventTeams), year, eventCode);
 
             var array = (await client.GetStreamAsync(requestUri)).JArrayFromStream();
 
-            return array.Select(x => x.GetTeamFromJToken());
+            return array.Select(x => x.GetTeamFromJToken()).ToList();
         }
 
-        public async Task<IEnumerable<Match>> GetEventMatches(int year, int eventCode)
+        public async Task<List<Match>> GetEventMatches(int year, string eventCode)
         {
             var requestUri = string.Format(
                 Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.EventMatches), year, eventCode);
 
             var array = (await client.GetStreamAsync(requestUri)).JArrayFromStream();
-
-            throw new NotImplementedException();
-            //return array.Select(x => x.GetMatchFro)
+            var thing = array.Select(x => x.GetMatchFromJToken()).ToList();
+            System.Diagnostics.Trace.TraceError(thing.Count + "");
+            return thing;
         }
     }
 }

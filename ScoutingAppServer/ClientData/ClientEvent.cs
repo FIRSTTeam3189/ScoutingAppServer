@@ -6,7 +6,7 @@ using System.Web;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.WindowsAzure.Storage.Table;
 
-namespace flipyserverService.ClientData
+namespace ScoutingServer.ClientData
 {
     public class ClientEvent
     {

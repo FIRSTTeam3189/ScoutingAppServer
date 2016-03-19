@@ -6,44 +6,43 @@ using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Web.Http;
-using flipyserverService.ClientData;
-using flipyserverService.Models;
-using flipyserverService.SQLDataObjects;
+using ScoutingServer.ClientData;
+using ScoutingServer.Models;
+using ScoutingServer.SQLDataObjects;
 using Microsoft.Azure.Mobile.Server.Config;
-using ScoutingModels.Scrubber;
+using flipyserverService.Interfaces;
 
-namespace flipyserverService.Controllers
-
-{
+namespace ScoutingServer.Controllers {
     [MobileAppController]
-    [RoutePrefix("api/Teams")]
-    public class TeamController : ApiController
-    {
-        private object async;
-
+    [RoutePrefix("api/teams")]
+    public class TeamController : ApiController {
         [Route("GetTeam")]
         [ActionName("GetTeam")]
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ClientTeam> GetTeam(int teamNumber)
-        {
-             MobileServiceContext context = new MobileServiceContext();
+        public async Task<ClientTeam> GetTeam(TeamInfoRequest request) {
+            return (await GetTeam(request.TeamNumber)).GetClientTeam();
+        }
 
-            Team team = context.Teams.SingleOrDefault(a => a.TeamNumber == teamNumber);
+        public static async Task<Team> GetTeam(int TeamNumber) {
+            MobileServiceContext context = new MobileServiceContext();
 
-            if (team == null)
-            {
+            Team team = context.Teams.FirstOrDefault(a => a.TeamNumber == TeamNumber);
+
+            if(team == null) {
 
                 BlueAllianceClient client = new BlueAllianceClient();
 
-                team = await client.GetTeam(teamNumber);
-
-                context.Teams.Add(team);
-                context.SaveChanges();
+                team = await client.GetTeam(TeamNumber);
+                if(team != null) {
+                    context.Teams.Add(team);
+                    context.SaveChanges();
+                } else {
+                    throw new HttpResponseException(HttpStatusCode.NotFound);
+                }
             }
-            return team.GetClientTeam();
+
+            return team;
         }
     }
 }
-}
-

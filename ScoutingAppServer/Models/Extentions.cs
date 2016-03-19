@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using flipyserverService.SQLDataObjects;
+using ScoutingServer.SQLDataObjects;
 
-namespace flipyserverService.Models
+namespace ScoutingServer.Models
 {
     public static class Extentions
     {
         public static bool Contains(this List<Event> events, Event e)
         {
-            return events.Any(ev => e.Name == ev.Name);
+            return events.Any(ev => e.Id == ev.Id);
         }
     }
 }

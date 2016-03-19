@@ -5,9 +5,8 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using ScoutingModels.Test;
 
-namespace ScoutingModels.Scrubber
+namespace ScoutingServer.Models
 {
     public static class StreamExtensions
     {

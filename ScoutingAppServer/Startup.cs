@@ -1,12 +1,12 @@
-using flipyserverService.Models;
+using ScoutingServer.Models;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
 
-[assembly: OwinStartup(typeof(flipyserverService.Startup))]
+[assembly: OwinStartup(typeof(ScoutingServer.Startup))]
 
-namespace flipyserverService
+namespace ScoutingServer
 {
     public partial class Startup
     {

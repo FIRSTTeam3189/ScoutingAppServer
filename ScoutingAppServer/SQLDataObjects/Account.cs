@@ -1,35 +1,47 @@
 ﻿using System.Collections.Generic;
-using FlipitServer.ClientData;
+using ScoutingServer.ClientData;
 using Microsoft.Azure.Mobile.Server;
-using flipyserverService.SQLDataObjects;
+using ScoutingServer.SQLDataObjects;
 
-namespace FlipitServer.SQLDataObjects {
+namespace ScoutingServer.SQLDataObjects {
     public class Account : EntityData {
+
+        public Account() : base() {
+
+        }
 
         public Account(string Id) : base() {
             this.Id = Id;
-            Role = new Role(Id, Role.ROLE_LEVEL_DEV);
+            Security = null;
+            Role = new Role(Id, Role.ROLE_LEVEL_DEV);// TODO: change this to only give user level Role to new users.
         }
 
         public ClientAccount GetClientAccount() {
             return new ClientAccount {
-                Email = Email,
+                Id = Id,
                 Username = Username,
-                TeamNumber = TeamNumber
+                TeamNumber = TeamNumber,
+                RealName = RealName
             };
         }
         
         public string Username { get; set; }
-        public string Email { get; set; }
+        public string RealName { get; set; }
         public string TeamNumber { get; set; }
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
+        public virtual AccountSecurity Security { get; set; }
 
         public static bool operator ==(Account a, Account b) {
-            return a.Id == b.Id;
+            if(a != null && b != null) {
+                return a.Id == b.Id;
+            } else if(a == null && b == null) {
+                return true;
+            }
+            return false;
         }
 
         public static bool operator !=(Account a, Account b) {
-            return a.Id != b.Id;
+            return !(a == b);
         }
 
         public override bool Equals(object obj) {

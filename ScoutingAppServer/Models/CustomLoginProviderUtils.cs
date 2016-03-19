@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace FlipitServer.Models {
+namespace ScoutingServer.Models {
     class CustomLoginProviderUtils {
         public static byte[] hash(string plaintext, byte[] salt) {
             SHA512Cng hashFunc = new SHA512Cng();

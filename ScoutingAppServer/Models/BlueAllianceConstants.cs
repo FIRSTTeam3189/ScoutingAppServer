@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ScoutingModels.Scrubber
+namespace ScoutingServer.Models
 {
     public static class BlueAllianceConstants
     {
@@ -14,7 +14,7 @@ namespace ScoutingModels.Scrubber
         /// <summary>
         /// Header value to use for the key
         /// </summary>
-        public static string HeaderValue => "frc3189:scouting_app:1";
+        public static string HeaderValue => "frc3189:scouting_app:v01";
 
         /// <summary>
         /// The API Path to Blue Alliance

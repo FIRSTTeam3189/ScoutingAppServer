@@ -2,11 +2,10 @@
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using Microsoft.Azure.Mobile.Server.Tables;
-using FlipitServer.SQLDataObjects;
-using flipyserverService.SQLDataObjects;
+using ScoutingServer.SQLDataObjects;
 using System.Data.Entity.Validation;
 
-namespace flipyserverService.Models
+namespace ScoutingServer.Models
 {
     public class MobileServiceContext : DbContext {
 
@@ -17,9 +16,10 @@ namespace flipyserverService.Models
         }
 
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<Alliance> Alliances { get; set; }
+        public DbSet<AccountSecurity> AccountSecurities { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<RobotEvent> RobotEvents { get; set; }
         public DbSet<Match> Matches { get; set; }
         public DbSet<Performance> Performances { get; set; }
         public DbSet<Role> Roles { get; set; }

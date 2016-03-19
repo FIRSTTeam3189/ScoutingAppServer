@@ -1,10 +1,10 @@
 ﻿{
   "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
-  "id": "flipyserverService",
+  "id": "team3189scoutingapp",
   "namespace": "microsoft.com",
   "gateway": "2015-01-14",
   "version": "1.0.0",
-  "title": "flipyserverService",
+  "title": "team3189scoutingapp",
   "summary": "",
   "author": "",
   "endpoints": {

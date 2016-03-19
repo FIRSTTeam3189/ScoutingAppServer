@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using flipyserverService.SQLDataObjects;
+using ScoutingServer.SQLDataObjects;
 
-namespace flipyserverService.ClientData
+namespace ScoutingServer.ClientData
 {
     public class ClientTeam
     {
@@ -16,7 +16,7 @@ namespace flipyserverService.ClientData
 
         public string TeamLocation { get; set; }
 
-        public virtual ICollection<ClientPerformance> TeamPerformance { get; set; }
+        public ICollection<ClientPerformance> TeamPerformance { get; set; }
 
     }
 }

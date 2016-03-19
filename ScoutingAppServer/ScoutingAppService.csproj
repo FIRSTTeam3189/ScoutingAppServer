@@ -222,19 +222,30 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="App_Start\" />
     <Folder Include="StorageDataObjects\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Startup.MobileApp.cs" />
+    <Compile Include="ClientData\ClientAlliance.cs" />
     <Compile Include="ClientData\ClientPerformance.cs" />
     <Compile Include="ClientData\ClientTeam.cs" />
     <Compile Include="ClientData\ClientEvent.cs" />
-    <Compile Include="ClientData\Startup.MobileApp.cs" />
+    <Compile Include="ClientData\ClientMatch.cs" />
+    <Compile Include="ClientData\LoginInfo.cs" />
     <Compile Include="ClientData\ClientAccount.cs" />
+    <Compile Include="ClientData\ClientRobotEvent.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\MatchController.cs" />
+    <Compile Include="Controllers\PerformanceController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Interfaces\EventMatchesRequest.cs" />
+    <Compile Include="Interfaces\EventTeamsRequest.cs" />
+    <Compile Include="Interfaces\CustomRegistrationRequest.cs" />
+    <Compile Include="Interfaces\LoginRequest.cs" />
+    <Compile Include="Interfaces\RefreshEventRequest.cs" />
     <Compile Include="Interfaces\RegistrationRequest.cs" />
+    <Compile Include="Interfaces\TeamInfoRequest.cs" />
     <Compile Include="Models\BlueAllianceClient.cs" />
     <Compile Include="Models\BlueAllianceConstants.cs" />
     <Compile Include="Models\CustomLoginProviderUtils.cs" />
@@ -243,10 +254,11 @@
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="Models\StreamExtentions.cs" />
     <Compile Include="SQLDataObjects\Account.cs" />
-    <Compile Include="SQLDataObjects\Alliance.cs" />
-    <Compile Include="SQLDataObjects\Event.cs" />
+    <Compile Include="SQLDataObjects\AccountSecurity.cs" />
     <Compile Include="SQLDataObjects\Match.cs" />
     <Compile Include="SQLDataObjects\Performance.cs" />
+    <Compile Include="SQLDataObjects\RobotEvent.cs" />
+    <Compile Include="SQLDataObjects\Event.cs" />
     <Compile Include="SQLDataObjects\Role.cs" />
     <Compile Include="SQLDataObjects\Team.cs" />
     <Compile Include="Startup.cs" />
@@ -280,7 +292,11 @@
     <None Include="Properties\PublishProfiles\flipyserver - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\flipyserver - Web Deploy.pubxml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <None Include="Properties\PublishProfiles\team3189scouting - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\team3189scouting - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\team3189scoutingapp - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Team3189ScoutingApp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\team3189scoutingapp - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Team3189ScoutingApp - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
